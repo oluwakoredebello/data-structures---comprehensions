@@ -5,34 +5,47 @@ names = ["Alice", "Bob", "Charlie", "Danielle"]
 
 length_of_names = [len(name) for name in names]
 
+print('\n------Exercise 1 results ------')
+print(length_of_names)
+
 # Exercise 2: Create a list of squares for numbers 1–10, but only for even numbers.
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 squared_evens = [number ** 2 for number in numbers if number % 2 == 0]
 
+print('\n------Exercise 2 results ------')
+print(squared_evens)
 
 # Exercise 3: Extract only the names that start with the letter "A" from a list.
 clients = ["Apple", "Microsoft", "Amazon", "Facebook", "Alphabet"]
 
 letter_a = [name for name in clients if name.startswith("A")]
 
+print('\n------Exercise 3 results ------')
+print(letter_a)
 # Phase 2: Dictionaries & Logic
 # Exercise 4: Create a dictionary from two lists (one for keys, one for values).
 keys = ["id", "username", "role"]
 values = [1001, "jdoe_data", "admin"]
 
 two_list_dict = {key:value for key, value in zip(keys, values)}
+print('\n------Exercise 4 results ------')
+print(two_list_dict)
 
 # Exercise 5 (The Schema Pivot): Take db_columns = [("username", "TEXT"), ("age", "INT")] and create a map where the value is True if the type is "TEXT", otherwise False.
 db_columns = [("username", "TEXT"), ("age", "INT"), ("bio", "TEXT"), ("created_at", "TS")]
 
 dict_mapping = {i[0]:True if i[1] == 'TEXT' else False for i in db_columns}
 
+print('\n------Exercise 5 results ------')
+print(dict_mapping)
 # Exercise 6 (The Ternary): Categorize a list of temperatures: if > 80, label it "High", else "Low".
 temps = [65, 90, 72, 100, 55]
 
 temp_category = ["High" if temp > 80 else "Low" for temp in temps]
 
+print('\n------Exercise 6 results ------')
+print(temp_category)
 # Phase 3: Nested Data & JSON Cleaning
 # Exercise 7 (The Matrix Flatten): Extract all string values from a list of dictionaries, regardless of the key.
 transactions = [
@@ -40,7 +53,11 @@ transactions = [
     {"vendor": "Netflix", "amount": 15, "city": "LA"},
     {"vendor": "Amazon", "amount": 20, "city": "CHI"}
 ]
+
 string_transactions = {i[k] for i in transactions for k in i if type(i[k]) == str}
+
+print('\n------Exercise 7 results ------')
+print(string_transactions)
 
 # Exercise 8 (The JSON Cleaner): From api_data, extract the city only if the user status is "active" and the score is >= 80.
 api_data = [
@@ -51,6 +68,9 @@ api_data = [
 ]
 
 user_data = [data['meta']['city'] for data in api_data if data['status'] == 'active' and data['meta']['score'] >= 80]
+
+print('\n------Exercise 8 results ------')
+print(user_data)
 
 # Exercise 9a: REMOVE negatives (Filter)
 # Goal: [[22.5, 23.0], [21.8, 22.1], [20.5, 20.9]]
@@ -65,6 +85,8 @@ filtered_readings = [
     for readings in hourly_readings
 ]
 
+print('\n------Exercise 9a results ------')
+print(filtered_readings)
 # Exercise 9b: REPLACE negatives with 0 (Map)
 # Goal: [[22.5, 0, 23.0], [0, 21.8, 22.1], [20.5, 20.9]]
 normalized_readings = [
@@ -72,6 +94,8 @@ normalized_readings = [
     for readings in hourly_readings
 ]
 
+print('\n------Exercise 9b results ------')
+print(normalized_readings)
 # Phase 4: The Advanced Tier
 # Exercise 10 (Matrix Normalizer): In a 3 X 3 grid, replace negative numbers with 0 and double all positive numbers. Keep the nested structure.
 raw_matrix = [
@@ -85,11 +109,17 @@ doubled_positives = [
     for row in raw_matrix
 ]
 
+print('\n------Exercise 10 results ------')
+print(doubled_positives)
 
 # Exercise 11 (Generator Expression): Create a memory-efficient generator that filters for "ERROR" in a log list and converts the message to uppercase.
 logs = ["INFO: System ok", "ERROR: Disk full", "INFO: Loading", "ERROR: Access denied"]
 
 filtered_generator = (i.split(':')[1].strip().upper() for i in logs if i.split(':')[0] == 'ERROR')
+
+print('\n------Exercise 11 results ------')
+print(next(filtered_generator))
+print(next(filtered_generator))
 
 # Exercise 12 (Matrix Transpose): Flip a 2 X 3 matrix into a 3 X 2 matrix (rows become columns).
 matrix = [
@@ -102,4 +132,5 @@ transposed_matrix = [
     for row in zip(matrix[0], matrix[1])
 ]
 
-
+print('\n------Exercise 12 results ------')
+print(transposed_matrix)
