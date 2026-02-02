@@ -1,3 +1,7 @@
+*.py[cod]
+venv/
+.vscode/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -205,3 +209,8 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+.DS_Store
+sample_data/
+*.csv
+*.json
