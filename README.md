@@ -1,2 +1,1 @@
-# data-structures---comprehensions
-improving precision in data structure comprehension through daily practice
+Phases and Exercises are Gemini-created but all responses are mine alone
